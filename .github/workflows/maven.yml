@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Pull the code from your repo onto the runner
+      # Pull the code from your repo onto the runner
       - uses: actions/checkout@v4
 
       - name: Set up JDK 25
@@ -26,7 +26,7 @@ jobs:
           distribution: 'temurin'
           cache: 'maven'
 
-      # 3. Build and run
+      # Build and run
       - name: Build and Test with Maven
         run: mvn -B clean verify || true # || true so the workflow doesn't stop immediately if a test fails
 
